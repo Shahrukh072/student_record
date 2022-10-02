@@ -42,8 +42,6 @@ app.get('/', function (req, res) {
   });
 });
 
-// //routes
-// app.use('/', require('./routes'));
 
 //server
 app.listen(port, () => {
