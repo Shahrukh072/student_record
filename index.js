@@ -3,12 +3,18 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
 const port = 8080;
+const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const teachers = require('./routes/teacher');
 const learners = require('./routes/learner');
 const jwt = require('jsonwebtoken');
 const passport = require("passport");
 const passportJwt = require('./config/passport-jwt-startegy');
+
+//EJS
+app.use(expressLayouts);
+app.use("/assets", express.static('./assets'));
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded());
 
